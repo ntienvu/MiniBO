@@ -33,7 +33,7 @@ ValueError: `f0` passed has more than 1 dimension.
 If this is the case, please downgrade to scipy=1.14.1
 
 # Slides and Presentation
-Visit http://vu-nguyen.org/BOTutorial_ACML20.html
+Visit http://vu-nguyen.org/BO_Part_1.pdf and http://vu-nguyen.org/BO_Part_2.pdf
 
 
 # Reference

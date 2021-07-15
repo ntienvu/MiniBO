@@ -1,5 +1,6 @@
 # MiniBayesOpt
 Mini Bayesian Optimization package at ACML2020 Tutorial on Bayesian Optimization
+
 Copyright by Dr Vu Nguyen.
 
 # Website: http://vu-nguyen.org/BOTutorial_ACML20.html

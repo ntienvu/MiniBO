@@ -22,7 +22,7 @@ demo_customize_your_own_function.ipynb
 
 # Dependencies
 * numpy=1.9.0
-* scipy=0.14.0
+* scipy=1.14.0
 * scikit-learn=0.16.1
 * tabulate=0.8.7
 

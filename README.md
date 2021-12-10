@@ -4,6 +4,12 @@ Mini Bayesian Optimization package at ACML2020 Tutorial on Bayesian Optimization
 
 # Website: http://vu-nguyen.org/BOTutorial_ACML20.html
 
+# Python environment
+To create the working environment, please use
+```
+conda env create -f environment.yml
+```
+
 # Demo and Visualization in 1d and 2d
 ```
 demo_1dimension_BO.ipynb

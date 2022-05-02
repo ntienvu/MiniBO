@@ -14,18 +14,28 @@ conda env create -f environment.yml
 # Demo and Visualization in 1d and 2d
 ```
 demo_1dimension_BO.ipynb
+```
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14KJLTTZY1reaWlZK5jj5WOj3dxpUQu9K#scrollTo=r2MEDu_sKsmU)
+
+```
 demo_2dimension_BO.ipynb
 ```
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1LdHljqU97S97E1CoUQVRN1RSEiD5rXmD#scrollTo=3TlIbyc-La5N)
+
 
 # Demo and Visualization for batch BO
 ```
 demo_batch_BO.ipynb
 ```
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1TEuYftL3ltUqkdx1S8J4kmt757Asj3Ut)
+
 
 # Customize your own black-box function
 ```
 demo_customize_your_own_function.ipynb
 ```
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1-rAr71cNaeu-E-Y75fXdrT_QwgS6gf7r)
 
 # Dependencies
 * numpy=1.9.0

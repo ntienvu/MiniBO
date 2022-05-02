@@ -1,6 +1,7 @@
 # MiniBayesOpt
 Mini Bayesian Optimization package at ACML2020 Tutorial on Bayesian Optimization
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1-rAr71cNaeu-E-Y75fXdrT_QwgS6gf7r)
 
 # Website: http://vu-nguyen.org/BOTutorial_ACML20.html
 

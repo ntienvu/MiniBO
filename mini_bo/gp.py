@@ -9,9 +9,7 @@ from sklearn.metrics.pairwise import euclidean_distances
 from scipy.optimize import minimize
 from sklearn.preprocessing import MinMaxScaler
 import scipy
-#from sklearn.metrics import pairwise_distances
 import matplotlib.pyplot as plt
-#import matplotlib as mpl
 import matplotlib.cm as cm
 
 
@@ -97,7 +95,6 @@ class GaussianProcess(object):
 
     def log_llk(self,X,y,hyper_values):
         
-        #print(hyper_values)
         hyper={}
         hyper['var']=1
         hyper['lengthscale']=hyper_values[0]
@@ -132,8 +129,8 @@ class GaussianProcess(object):
     def optimise(self):
         """
         Optimise the GP kernel hyperparameters
-        Returns
-        x_t
+        Returns:
+            optimized lengthscale
         """
         opts ={'maxiter':200,'maxfun':200,'disp': False}
 
@@ -158,12 +155,13 @@ class GaussianProcess(object):
    
     def predict(self,Xtest,isOriScale=False):
         """
+        Given the test points, predict the mean and standard deviation
         ----------
-        Xtest: the testing points  [N*d]
+        Xtest: the test points  [N*d]
 
         Returns
         -------
-        pred mean, pred var, pred mean original scale, pred var original scale
+        pred mean, pred var: [Nx1], [Nx1]
         """    
         
         if isOriScale:
@@ -182,12 +180,8 @@ class GaussianProcess(object):
         v=np.linalg.solve(self.L,KK_xTest_x.T)
         var=KK_xTest_xTest-np.dot(v.T,v)
 
-        #mean_ori=mean*np.std(self.Y_ori)+np.mean(self.Y_ori)
         std=np.reshape(np.diag(var),(-1,1))
-        
-        #std_ori=std*np.std(self.Y_ori)#+np.mean(self.Y_ori)
-        
-        #return mean,std,mean_ori,std_ori
+                
         return  np.reshape(mean,(-1,1)),std  
 
     

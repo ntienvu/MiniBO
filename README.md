@@ -38,16 +38,12 @@ demo_customize_your_own_function.ipynb
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1-rAr71cNaeu-E-Y75fXdrT_QwgS6gf7r)
 
 # Dependencies
-* numpy=1.9.0
-* scipy=1.14.0
-* scikit-learn=0.16.1
-* tabulate=0.8.7
+* numpy >= 1.9.0
+* scipy >= 1.14.0
+* scikit-learn >= 0.16.1
+* tabulate >= 0.8.7
+* matplotlib>=3.1.0
 
-# Error with scipy=1.15
-```
-ValueError: `f0` passed has more than 1 dimension.
-```
-If this is the case, please downgrade to scipy=1.14.1
 
 # Slides and Presentation
 ```

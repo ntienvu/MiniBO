@@ -27,7 +27,6 @@ class AcquisitionFunction(object):
         else:
             self.acq_name = acq_name
                     
-        
     def acq_kind(self,gp,x):
             
         y_max=np.max(gp.Y)
@@ -40,10 +39,8 @@ class AcquisitionFunction(object):
         if self.acq_name == 'ei':
             return self._ei(x, gp, y_max)
   
-  
     @staticmethod
     def _gp_ucb(gp,xTest,fstar_scale=0):
-        #dim=gp.dim
         mean, var= gp.predict(xTest)
         var.flags['WRITEABLE']=True
         var[var<1e-10]=0
@@ -53,9 +50,8 @@ class AcquisitionFunction(object):
         beta_t = np.log(len(gp.Y))
       
         #beta=300*0.1*np.log(5*len(gp.Y))# delta=0.2, gamma_t=0.1
-        temp=mean + np.sqrt(beta_t) * np.sqrt(var)
-        return  temp
-    
+        out = mean + np.sqrt(beta_t) * np.sqrt(var)
+        return  out.ravel()
  
     @staticmethod
     def _ei(x, gp, y_max):
@@ -67,5 +63,5 @@ class AcquisitionFunction(object):
         
         out[var2<1e-10]=0
         
-        return out
+        return out.ravel()
        

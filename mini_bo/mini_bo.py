@@ -2,13 +2,10 @@
 """
 Created on Wed Apr  8 10:51:04 2020
 
-@author: Lenovo
+@author: Vu Nguyen
 """
 
-
-
 import numpy as np
-#from gp import GaussianProcess
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from mini_bo.gp import GaussianProcess
@@ -79,14 +76,15 @@ class BayesOpt:
                
         # y original scale
         self.Y_ori = None
-                 
 
         # acquisition function
         self.acq_name = acq_name
 
         self.gp=GaussianProcess(self.scaleSearchSpace,verbose=verbose)
 
-    
+    # =============================================================================
+    #   Function init the BayesOpt class by randomly generate input X and init_Y=f(init_X)
+    # =============================================================================
     def init(self, n_init_points=3,seed=1):
         """      
         Input parameters
@@ -113,7 +111,9 @@ class BayesOpt:
         self.gp.fit(self.X, self.Y)
 
        
-        
+    # =============================================================================
+    #   Function init the BayesOpt class with the input X and output Y
+    # =============================================================================
     def init_with_data(self, init_X,init_Y,isPermutation=False):
         """      
         Input parameters
@@ -141,6 +141,16 @@ class BayesOpt:
         return mu, np.sqrt(sigma2)
         
     def select_batch_of_points(self,B):
+        """
+        sequentially select a batch of B points to evaluate
+        Input:
+            B: batch size, e.g., B=3
+        
+        Returns
+        -------
+            x: recommented points for evaluation, [B x d]
+        """
+        
         self.B=B
         temp_X=self.X.copy()
         temp_Y=self.Y.copy()
@@ -164,18 +174,13 @@ class BayesOpt:
 
     def select_next_point(self,B=1):
         """
-        Main optimization method.
-
-        Input parameters
-        ----------
-        gp_params: parameter for Gaussian Process
-
+        sequentially select a next point to evaluate
+        
         Returns
         -------
-        x: recommented point for evaluation
+        x: recommented point for evaluation, [1 x d]
         """
 
-        #self.Y=np.reshape(self.Y,(-1,1))
         self.gp=GaussianProcess(self.scaleSearchSpace,verbose=self.verbose)
         self.gp.fit(self.X, self.Y)
         self.B=B
@@ -212,6 +217,6 @@ class BayesOpt:
         # update Y after change Y_original
         self.Y=(self.Y_ori-np.mean(self.Y_ori))/np.std(self.Y_ori)
 
-        return x_max#,x_max_ori
+        return x_max
     
     

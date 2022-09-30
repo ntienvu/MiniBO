@@ -4,11 +4,6 @@ setup(
     name='mini_bo',
     version='1',
     packages=find_packages(),
-    #packages = ["mini_bo",
-    #"mini_bo.gp",
-    #"mini_bo.functions",
-	#"mini_bo.utility",
-	#"mini_bo.visualization"],
     include_package_data = True,
     description='Mini Bayesian Optimization',
     install_requires=[
